@@ -1,0 +1,191 @@
+$red: #e63946ff
+$beige: #f1faeeff
+$light: #e98f3a
+$blue: #457b9dff
+$dark: #1d3557ff
+$font: #111111
+    
+*
+    box-sizing: border-box
+html, body
+    min-height: 100%
+    background: $beige
+    color: $font
+body
+    font-size: 1rem
+    font-family: Arial, Helvetica, sans-serif
+    line-height: 1.5
+    font-synthesis: none
+    text-rendering: optimizeLegibility
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    -webkit-text-size-adjust: 100%
+body, ul, ol, dl, p, h1, h2, h3, h4
+    margin: 0
+p
+    -ms-word-break: break-all
+    word-break: break-all
+    word-break: break-word
+    -moz-hyphens: auto
+    -webkit-hyphens: auto
+    -ms-hyphens: auto
+    hyphens: auto
+a
+    color: $dark
+    text-decoration: none
+.App
+    width: 90%
+    margin: auto
+
+header
+    text-align: center
+    h1,h2,h3
+        margin: 15px 0
+    h1
+        font-size: 2.2rem
+        letter-spacing: 1.2rem
+    h2
+        font-size: 1.2rem
+    h3
+        font-size: 0.8rem
+
+.slots
+    display: flex
+    justify-content: center
+    align-items: center
+    gap: 15px
+    background: $dark
+    border-radius: 15px
+    margin: 30px 0
+    .slot
+        background: $red
+        color: white
+        padding: 10px 20px
+        border-radius: 10px
+        .chore
+            margin-bottom: 10px
+            width: 100px
+            height: 150px
+            padding: 10px
+            background: white
+            border-radius: 5px
+            display: flex
+            justify-content: center
+            align-items: center
+            ul
+                list-style: none
+                padding-left: 0
+            li
+                font-size: 0.8rem
+                color: $font
+                display: flex
+                justify-content: center
+                flex-wrap: wrap
+                gap: 10px
+                align-items: center
+                img 
+                    width: 60%
+                span 
+                    text-align: center
+                    font-weight: 600
+
+.settings
+    text-align: center
+    .spinner
+        text-transform: uppercase
+        background: $light
+        appearance: none
+        border: none
+        padding: 10px 30px
+        cursor: pointer
+        color: white
+        font-weight: 800
+        font-size: 1.5rem
+        border-radius: 10px
+        margin: 20px 0
+        box-shadow: #ffffff40 0px 1px 2px 0px, #ffffff30 0px 1px 3px 1px
+        transition: 0.5s ease-out
+        &:hover
+            background: darken($light, 10%)
+    .options
+        text-align: left
+        display: flex
+        gap: 10px
+        .option-panel
+            margin: 10px 0
+            border-radius: 15px
+            padding: 15px 20px
+            width: 25%
+            color: white
+            h3
+                color: $blue
+                border-bottom: 3px solid $dark
+            ul
+                list-style: none
+                padding-left: 0
+            li
+                display: flex
+                cursor: pointer
+                align-items: center
+                font-size: 0.9rem
+                padding: 10px 10px
+                margin: 10px 0
+                transition: 0.3s
+                position: relative
+                img
+                    width: 30px
+                    height: 30px
+                    margin-right: 10px
+                .time
+                    font-size: 0.6rem
+                    font-weight: 600
+                    position: absolute
+                    right: 5px
+                    background-color: lighten($dark, 10%)
+                    padding: 3px 5px
+                    text-transform: uppercase
+                    border-radius: 5px
+
+                &.checked
+                    box-shadow: #ffffff30 0px 1px 2px 0px, #ffffff10 0px 1px 3px 1px
+                    color: white
+                    background: lighten($dark, 5%)
+                    
+
+
+footer
+    text-align: center
+    font-size: 0.8rem
+
+.colors
+    padding-top: 100px
+    display: flex
+    justify-content: center
+    align-items: center
+    div
+        height: 80px
+        width: 80px
+        display: flex
+        justify-content: center
+        align-items: center
+    .red
+        background: $red
+        color: white
+    .beige
+        background: $beige
+    .light
+        background: $light
+    .blue
+        background: $blue
+    .dark
+        background: $dark
+        color: white
+
+@keyframes scrollUp
+  from
+    -webkit-transform: translateY(0)
+            transform: translateY(0)
+  to
+    -webkit-transform: translateY(-80%)
+            transform: translateY(-80%)
+  

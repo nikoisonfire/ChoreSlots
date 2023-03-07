@@ -1,34 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import Slots from "./Slots";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  const date = new Date().getFullYear();
 
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <header>
+        <h1>Chore Slots</h1>
+        <h2>
+          Generate a weekly plan to do your household chores one at a time{" "}
+          <br />- instead of feeling exhausted by doing them all in one day.
+        </h2>
+        <h3>
+          Zen habit: 15 minutes per day instead of 3 hours on your weekend free
+          time
+        </h3>
+      </header>
+      <section className="slots">
+        <Slots />
+      </section>
+      <footer>&copy; {date} - powered by ❤️ using react, vite, AWS</footer>
+
+      <div className="colors">
+        <div className="red">red</div>
+        <div className="beige">beige</div>
+        <div className="light">light</div>
+        <div className="blue">blue</div>
+        <div className="dark">dark</div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

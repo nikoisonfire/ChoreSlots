@@ -1,0 +1,150 @@
+{
+  "Laundry": [
+    {
+      "id": "laundry",
+      "name": "Do laundry",
+      "type": "Laundry",
+      "time": 10,
+      "icon": "laundry.png"
+    },
+    {
+      "id": "iron",
+      "name": "Iron Clothes",
+      "type": "Laundry",
+      "time": 20,
+      "icon": "ironing.png"
+    },
+    {
+      "id": "bedding",
+      "name": "Change Bedding",
+      "type": "Laundry",
+      "time": 10,
+      "icon": "bedding.png"
+    },
+    {
+      "id": "curtains",
+      "name": "Curtains/Carpets",
+      "type": "Laundry",
+      "time": 10,
+      "icon": "curtains.png"
+    }
+  ],
+  "Kitchen": [
+    {
+      "id": "countertops",
+      "name": "Countertops",
+      "type": "Kitchen",
+      "time": 7,
+      "icon": "countertops.png"
+    },
+    {
+      "id": "fridge",
+      "name": "Fridge (Inlays)",
+      "type": "Kitchen",
+      "time": 10,
+      "icon": "fridge.png"
+    },
+    {
+      "id": "microwave",
+      "name": "Microwave/Oven",
+      "type": "Kitchen",
+      "time": 12,
+      "icon": "microwave.png"
+    },
+    {
+      "id": "mealprep",
+      "name": "Meal prep",
+      "type": "Kitchen",
+      "time": 30,
+      "icon": "meal-prep.png"
+    },
+    {
+      "id": "tossfood",
+      "name": "Toss expired food",
+      "type": "Kitchen",
+      "time": 2,
+      "icon": "expired.png"
+    },
+    {
+      "id": "kitchensink",
+      "name": "Kitchen sink",
+      "type": "Kitchen",
+      "time": 10,
+      "icon": "kitchen-sink.png"
+    }
+  ],
+  "Bathroom": [
+    {
+      "id": "sink",
+      "name": "Sink/Faucet",
+      "type": "Bathroom",
+      "time": 5,
+      "icon": "sink.png"
+    },
+    {
+      "id": "toilet",
+      "name": "Toilet",
+      "type": "Bathroom",
+      "time": 7,
+      "icon": "toilet.png"
+    },
+    {
+      "id": "shower",
+      "name": "Shower/Tub",
+      "type": "Bathroom",
+      "time": 7,
+      "icon": "tub.png"
+    },
+    {
+      "id": "towels",
+      "name": "Change Towels",
+      "type": "Bathroom",
+      "time": 1,
+      "icon": "towels.png"
+    }
+  ],
+  "Misc": [
+    {
+      "id": "floors",
+      "name": "Floors (Vacuum/ mop)",
+      "type": "Misc",
+      "time": 30,
+      "icon": "vacuum.png"
+    },
+    {
+      "id": "dust",
+      "name": "Dust furniture",
+      "type": "Misc",
+      "time": 10,
+      "icon": "dusting.png"
+    },
+    {
+      "id": "windows",
+      "name": "Windows/Mirros",
+      "type": "Misc",
+      "time": 15,
+      "icon": "windows.png"
+    },
+    {
+      "id": "tidyup",
+      "name": "Tidy up things",
+      "type": "Misc",
+      "time": 5,
+      "icon": "tidy-up.png"
+    },
+    {
+      "id": "plants",
+      "name": "Water plants",
+      "type": "Misc",
+      "time": 2,
+      "icon": "water-plants.png"
+    },
+    {
+      "id": "mowlawn",
+      "name": "Mow lawn",
+      "type": "Misc",
+      "time": 25,
+      "icon": "mow-lawn.png"
+    }
+  ]
+}
