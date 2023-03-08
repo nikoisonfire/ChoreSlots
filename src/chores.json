@@ -46,7 +46,7 @@
     },
     {
       "id": "microwave",
-      "name": "Microwave/Oven",
+      "name": "Microwave/ Oven",
       "type": "Kitchen",
       "time": 12,
       "icon": "microwave.png"

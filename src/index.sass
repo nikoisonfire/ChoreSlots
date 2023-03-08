@@ -65,9 +65,10 @@ header
         .chore
             margin-bottom: 10px
             width: 100px
-            height: 150px
+            height: 130px
             padding: 10px
             background: white
+            overflow: hidden
             border-radius: 5px
             display: flex
             justify-content: center
@@ -75,19 +76,57 @@ header
             ul
                 list-style: none
                 padding-left: 0
+                transform: translateY(calc( 50% - 70px))
+                &.removeTrf
+                    transform: none
             li
                 font-size: 0.8rem
                 color: $font
+                margin: 50px 0
                 display: flex
                 justify-content: center
                 flex-wrap: wrap
                 gap: 10px
                 align-items: center
+                &.animate
+                    animation: scrollUp 0.1s 0.5s ease 30, blur 300ms 0.5s forwards, unblur 500ms 3.2s forwards
                 img 
                     width: 60%
+                    &.lucky
+                        width: 50px
                 span 
                     text-align: center
                     font-weight: 600
+
+@keyframes scrollUp
+  from
+    -webkit-transform: translateY(0)
+            transform: translateY(0)
+  to
+    -webkit-transform: translateY(-100%)
+            transform: translateY(-100%)
+
+@keyframes blur
+    0%
+        filter: blur(0)
+    10%
+        filter: blur(1px)
+    20%
+        filter: blur(2px)
+    40%
+        filter: blur(6px)
+    60%
+        filter: blur(11px)
+    80%
+        filter: blur(15px)
+    100%
+        filter: blur(16px)
+
+@keyframes unblur
+    0%
+        filter: blur(16px)
+    100%
+        filter: blur(0)
 
 .settings
     text-align: center
@@ -181,11 +220,3 @@ footer
         background: $dark
         color: white
 
-@keyframes scrollUp
-  from
-    -webkit-transform: translateY(0)
-            transform: translateY(0)
-  to
-    -webkit-transform: translateY(-80%)
-            transform: translateY(-80%)
-  
