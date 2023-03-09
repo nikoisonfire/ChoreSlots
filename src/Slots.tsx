@@ -48,7 +48,7 @@ const Slots = () => {
     setTimeout(() => {
       setChoices(pickRandomSelectedChore());
       setDeff(false);
-    }, 3300);
+    }, 5000);
   };
 
   return (

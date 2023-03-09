@@ -39,7 +39,7 @@ const Slot = ({
           </ul>
         ) : (
           <ul className={showDefault ? "" : "removeTrf"}>
-            <li className={classNames}>
+            <li>
               <img src={img.href} />
               <span>{data.name}</span>
             </li>
