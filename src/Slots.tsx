@@ -7,28 +7,15 @@ import { useGlobal } from "./state";
 import { set, shuffle } from "lodash";
 import { useState } from "react";
 import { Chore } from "./Chore";
-import { getAllChores } from "./util";
+import { calcTotalTime, getAllChores, pickRandomSelectedChore } from "./util";
 
 const Slots = () => {
   const store = useGlobal((state) => state.data);
 
-  const pickRandomSelectedChore = () => {
-    const chore_arr = getAllChores();
-    const reduced_chores = chore_arr.filter(
-      //@ts-ignore
-      (el) => store.checked[el.id] === true
-    );
-    // const len = reduced_chores.length;
-    // const choice = Math.floor(Math.random() * len);
-    // return reduced_chores[choice];
-    let shuff = shuffle(reduced_chores);
-    if (shuff.length > 7) {
-      shuff.length = 7;
-    }
-    return shuff;
-  };
-
-  const [choices, setChoices] = useState(pickRandomSelectedChore());
+  const [choices, setChoices] = useState(pickRandomSelectedChore(store));
+  const [spinning, setSpinning] = useState(false);
+  const [deff, setDeff] = useState(true);
+  const [total, setTotal] = useState(0);
 
   const daysOfTheWeek = [
     "Monday",
@@ -40,14 +27,14 @@ const Slots = () => {
     "Sunday",
   ];
 
-  const [spinning, setSpinning] = useState(false);
-  const [deff, setDeff] = useState(true);
-
-  const spin = () => {
+  const handleSpinClick = (e: React.FormEvent) => {
+    setDeff(true);
     setSpinning(true);
     setTimeout(() => {
-      setChoices(pickRandomSelectedChore());
+      const ch = pickRandomSelectedChore(store);
+      setChoices(ch);
       setDeff(false);
+      setTotal(calcTotalTime(ch));
     }, 5000);
   };
 
@@ -65,7 +52,11 @@ const Slots = () => {
         ))}
       </div>
       <div className="settings">
-        <button type="button" className="spinner" onClick={() => spin()}>
+        <div className="time">
+          <strong>Total time:</strong> {total} minutes -{" "}
+          <strong>Average/Day:</strong> {Math.floor(total / 7)} minutes
+        </div>
+        <button type="button" className="spinner" onClick={handleSpinClick}>
           spin
         </button>
         <Options />

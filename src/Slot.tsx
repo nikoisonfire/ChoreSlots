@@ -4,18 +4,15 @@ import seven from "./assets/seven.png";
 import { useEffect, useState } from "react";
 import { replaceImgSrc } from "./util";
 import { shuffle } from "lodash";
+import React from "react";
 
-const Slot = ({
-  day,
-  data,
-  showDefault,
-  spinning,
-}: {
+const Slot = (props: {
   day: string;
   data: Chore;
   showDefault: boolean;
   spinning: boolean;
 }) => {
+  const { day, data, showDefault, spinning } = props;
   const img = new URL(`./assets/chores/${data.icon}`, import.meta.url);
 
   const defData = shuffle(replaceImgSrc(import.meta.url));

@@ -3,5 +3,5 @@ export type Chore = {
   name: string;
   time: number;
   icon: string;
-  type: "Kitchen" | "Misc" | "Bathroom" | "Laundry";
+  type: string;
 };

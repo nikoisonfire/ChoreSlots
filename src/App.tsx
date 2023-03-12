@@ -2,6 +2,8 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import Slots from "./Slots";
 
+import slot from "./assets/slot.svg";
+
 function App() {
   const [count, setCount] = useState(0);
   const date = new Date().getFullYear();
@@ -9,7 +11,10 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>Chore Slots</h1>
+        <div className="logo">
+          <img src={slot} />
+          <h1>Chore Slots</h1>
+        </div>
         <h2>
           Generate a weekly plan to do your household chores one at a time{" "}
           <br />- instead of feeling exhausted by doing them all in one day.
@@ -23,14 +28,6 @@ function App() {
         <Slots />
       </section>
       <footer>&copy; {date} - powered by ❤️ using react, vite, AWS</footer>
-
-      <div className="colors">
-        <div className="red">red</div>
-        <div className="beige">beige</div>
-        <div className="light">light</div>
-        <div className="blue">blue</div>
-        <div className="dark">dark</div>
-      </div>
     </div>
   );
 }

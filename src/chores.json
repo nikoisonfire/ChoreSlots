@@ -23,7 +23,7 @@
     },
     {
       "id": "curtains",
-      "name": "Curtains/Carpets",
+      "name": "Curtains/ Carpets",
       "type": "Laundry",
       "time": 10,
       "icon": "curtains.png"
@@ -120,7 +120,7 @@
     },
     {
       "id": "windows",
-      "name": "Windows/Mirros",
+      "name": "Windows/ Mirrors",
       "type": "Misc",
       "time": 15,
       "icon": "windows.png"
