@@ -32,7 +32,7 @@ jobs:
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
-        source_file: ${{ env.GITHUB_WORKSPACE }}/dist/
+        source_file: ${{ env.GITHUB_WORKSPACE }}
         destination_repo: 'nikoisonfire/nikoisonfire.github.io'
         destination_folder: 'choreslots'
         user_email: 'nikokre@gmail.com'
