@@ -27,12 +27,12 @@ jobs:
         npm install
         npm run build
         
-    - name: Pushes build folder
-      uses: dmnemec/copy_file_to_another_repo_action@main
+    - name: Pushes test folder
+      uses: crykn/copy_folder_to_another_repo_action@v1.0.6
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
-        source_file: '${{ github.workspace }}/dist/'
+        source_folder: '${{ github.workspace }}/dist'
         destination_repo: 'nikoisonfire/nikoisonfire.github.io'
         user_email: 'nikokre@gmail.com'
         user_name: 'nikoisonfire'
