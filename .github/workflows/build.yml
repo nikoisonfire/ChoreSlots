@@ -34,7 +34,6 @@ jobs:
       with:
         source_file: '${{ github.workspace }}/dist/'
         destination_repo: 'nikoisonfire/nikoisonfire.github.io'
-        destination_folder: 'choreslots'
         user_email: 'nikokre@gmail.com'
         user_name: 'nikoisonfire'
         commit_message: 'Committing build code'
