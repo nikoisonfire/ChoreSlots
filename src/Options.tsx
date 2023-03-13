@@ -8,7 +8,7 @@ const Options = () => {
     <div className="options">
       {Object.keys(chores).map((objKey) => (
         //@ts-ignore
-        <OptionsPanel key={objKey} items={ch[objKey]} name={objKey} />
+        <OptionsPanel key={objKey} items={chores[objKey]} name={objKey} />
       ))}
     </div>
   );
