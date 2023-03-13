@@ -4,8 +4,8 @@ import chores from "./util/chores.json";
 import bedding from "./assets/chores/bedding.png";
 import Slot from "./Slot";
 import { useGlobal } from "./util/state";
-import { set, shuffle } from "lodash";
-import { useState } from "react";
+import { isEqual, set, shuffle } from "lodash";
+import { useEffect, useState } from "react";
 import { Chore } from "./Chore";
 import {
   calcTotalTime,
@@ -17,10 +17,18 @@ import AddToCalendar from "./AddToCalendar";
 
 const Slots = () => {
   const store = useGlobal((state) => state.data);
+  const setLast = useGlobal((state) => state.setLast);
 
-  const [choices, setChoices] = useState(pickRandomSelectedChore(store));
+  const defaultChoice =
+    store?.lastRoll && store?.lastRoll.length > 0
+      ? store?.lastRoll
+      : pickRandomSelectedChore(store);
+
+  console.log("From store? ", isEqual(defaultChoice, store?.lastRoll));
+
+  const [choices, setChoices] = useState(defaultChoice);
   const [spinning, setSpinning] = useState(false);
-  const [deff, setDeff] = useState(true);
+  const [deff, setDeff] = useState(!isEqual(defaultChoice, store?.lastRoll));
   const [total, setTotal] = useState(0);
 
   const handleSpinClick = (e: React.FormEvent) => {
@@ -28,9 +36,13 @@ const Slots = () => {
     setSpinning(true);
     setTimeout(() => {
       const ch = pickRandomSelectedChore(store);
-      setChoices(ch);
-      setDeff(false);
-      setTotal(calcTotalTime(ch));
+      if (ch) {
+        setChoices(ch);
+        //@ts-ignore
+        setLast(ch);
+        setDeff(false);
+        setTotal(calcTotalTime(ch));
+      }
     }, 5000);
   };
 

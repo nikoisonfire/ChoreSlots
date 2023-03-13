@@ -1,8 +1,8 @@
 import { create } from "zustand";
-import { devtools } from "zustand/middleware";
+import { devtools, persist, createJSONStorage } from "zustand/middleware";
+import { Chore } from "../Chore";
 
-type GlobalState = {
-  toggleChecked: (item: string) => void;
+export type GlobalState = {
   data: {
     checked: {
       floors: boolean;
@@ -26,41 +26,66 @@ type GlobalState = {
       shower: boolean;
       towels: boolean;
     };
+    lastRoll?: Chore[];
   };
+  toggleChecked: (item: string) => void;
+  reset: () => void;
+  setLast: (choices: Chore[]) => void;
 };
 
-export const useGlobal = create<GlobalState>()(
-  devtools((set) => ({
-    data: {
-      checked: {
-        floors: true,
-        dust: true,
-        windows: false,
-        tidyup: false,
-        plants: false,
-        mowlawn: false,
-        laundry: true,
-        iron: false,
-        bedding: false,
-        curtains: false,
-        countertops: false,
-        fridge: false,
-        microwave: false,
-        mealprep: false,
-        tossfood: false,
-        kitchensink: true,
-        sink: true,
-        toilet: true,
-        shower: true,
-        towels: false,
-      },
+const defaultState: Partial<GlobalState> = {
+  data: {
+    checked: {
+      floors: true,
+      dust: true,
+      windows: false,
+      tidyup: false,
+      plants: false,
+      mowlawn: false,
+      laundry: true,
+      iron: false,
+      bedding: false,
+      curtains: false,
+      countertops: false,
+      fridge: false,
+      microwave: false,
+      mealprep: false,
+      tossfood: false,
+      kitchensink: true,
+      sink: true,
+      toilet: true,
+      shower: true,
+      towels: false,
     },
-    toggleChecked: (item: string) =>
-      set((state: any) => {
-        state.data.checked[item] = !state.data.checked[item];
-        return state;
+    lastRoll: [],
+  },
+};
+
+export const useGlobal = create<Partial<GlobalState>>()(
+  devtools(
+    persist(
+      (set) => ({
+        ...defaultState,
+        toggleChecked: (item: string) =>
+          set((state: any) => {
+            state.data.checked[item] = !state.data.checked[item];
+            return state;
+          }),
+        reset: () => set(() => ({ ...defaultState })),
+        setLast: (choices: Chore[]) =>
+          set((state: GlobalState) => ({
+            data: {
+              ...state.data,
+              lastRoll: choices,
+            },
+          })),
       }),
-  }))
+      {
+        name: "chore-storage",
+        storage: createJSONStorage(() => localStorage),
+      }
+    )
+  )
 );
 
 // Add Persistance

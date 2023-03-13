@@ -24,11 +24,11 @@ const Slot = (props: {
       <div className="chore">
         {showDefault ? (
           <ul>
-            <li className={classNames}>
+            <li className={classNames} key={"lucky"}>
               <img src={seven} className="lucky" />
             </li>
             {defData.map((value) => (
-              <li className={classNames}>
+              <li className={classNames} key={value.id}>
                 <img src={value.icon} />
                 <span>{value.name}</span>
               </li>

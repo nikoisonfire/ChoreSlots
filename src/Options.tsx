@@ -6,8 +6,9 @@ import { useGlobal } from "./util/state";
 const Options = () => {
   return (
     <div className="options">
-      {Object.keys(chores).map((key) => (
-        <OptionsPanel key={key} items={chores[key]} name={key} />
+      {Object.keys(chores).map((objKey) => (
+        //@ts-ignore
+        <OptionsPanel key={objKey} items={ch[objKey]} name={objKey} />
       ))}
     </div>
   );
@@ -36,6 +37,7 @@ const ChoreOption = ({ data }: { data: Chore }) => {
   const store = useGlobal((state) => state.data);
   const tChecked = useGlobal((state) => state.toggleChecked);
 
+  //@ts-ignore
   const [checked, setChecked] = useState(store.checked[data.id]);
 
   const img = new URL(`./assets/chores/${data.icon}`, import.meta.url);
@@ -43,6 +45,7 @@ const ChoreOption = ({ data }: { data: Chore }) => {
     <li
       className={checked ? "checked" : ""}
       onClick={() => {
+        //@ts-ignore
         tChecked(data.id);
         return setChecked((state: boolean) => !state);
       }}
