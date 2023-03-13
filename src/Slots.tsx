@@ -24,8 +24,6 @@ const Slots = () => {
       ? store?.lastRoll
       : pickRandomSelectedChore(store);
 
-  console.log("From store? ", isEqual(defaultChoice, store?.lastRoll));
-
   const [choices, setChoices] = useState(defaultChoice);
   const [spinning, setSpinning] = useState(false);
   const [deff, setDeff] = useState(!isEqual(defaultChoice, store?.lastRoll));
