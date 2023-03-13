@@ -36,4 +36,4 @@ jobs:
         destination_repo: 'nikoisonfire/nikoisonfire.github.io'
         user_email: 'nikokre@gmail.com'
         user_name: 'nikoisonfire'
-        commit_message: 'Committing build code'
+        commit_msg: 'Committing build code'
