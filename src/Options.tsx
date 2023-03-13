@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Chore } from "./Chore";
-import chores from "./chores.json";
-import { useGlobal } from "./state";
+import chores from "./util/chores.json";
+import { useGlobal } from "./util/state";
 
 const Options = () => {
   return (

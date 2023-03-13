@@ -4,4 +4,5 @@ export type Chore = {
   time: number;
   icon: string;
   type: string;
+  prefix: string;
 };

@@ -2,37 +2,42 @@
   "Laundry": [
     {
       "id": "laundry",
-      "name": "Do laundry",
+      "name": "Laundry",
       "type": "Laundry",
       "time": 10,
-      "icon": "laundry.png"
+      "icon": "laundry.png",
+      "prefix": "Do"
     },
     {
       "id": "iron",
       "name": "Iron Clothes",
       "type": "Laundry",
       "time": 20,
-      "icon": "ironing.png"
+      "icon": "ironing.png",
+      "prefix": "Do"
     },
     {
       "id": "bedding",
       "name": "Change Bedding",
       "type": "Laundry",
       "time": 10,
-      "icon": "bedding.png"
+      "icon": "bedding.png",
+      "prefix": "Do"
     },
     {
       "id": "curtains",
       "name": "Curtains/ Carpets",
       "type": "Laundry",
       "time": 10,
-      "icon": "curtains.png"
+      "icon": "curtains.png",
+      "prefix": "Clean"
     }
   ],
   "Kitchen": [
     {
       "id": "countertops",
       "name": "Countertops",
+      "prefix": "Clean",
       "type": "Kitchen",
       "time": 7,
       "icon": "countertops.png"
@@ -40,6 +45,7 @@
     {
       "id": "fridge",
       "name": "Fridge (Inlays)",
+      "prefix": "Clean",
       "type": "Kitchen",
       "time": 10,
       "icon": "fridge.png"
@@ -47,6 +53,7 @@
     {
       "id": "microwave",
       "name": "Microwave/ Oven",
+      "prefix": "Clean",
       "type": "Kitchen",
       "time": 12,
       "icon": "microwave.png"
@@ -56,18 +63,21 @@
       "name": "Meal prep",
       "type": "Kitchen",
       "time": 30,
+      "prefix": "Do",
       "icon": "meal-prep.png"
     },
     {
       "id": "tossfood",
       "name": "Toss expired food",
       "type": "Kitchen",
+      "prefix": "Clean",
       "time": 2,
       "icon": "expired.png"
     },
     {
       "id": "kitchensink",
       "name": "Kitchen sink",
+      "prefix": "Clean",
       "type": "Kitchen",
       "time": 10,
       "icon": "kitchen-sink.png"
@@ -78,6 +88,7 @@
       "id": "sink",
       "name": "Sink/Faucet",
       "type": "Bathroom",
+      "prefix": "Clean",
       "time": 5,
       "icon": "sink.png"
     },
@@ -85,6 +96,7 @@
       "id": "toilet",
       "name": "Toilet",
       "type": "Bathroom",
+      "prefix": "Clean",
       "time": 7,
       "icon": "toilet.png"
     },
@@ -93,10 +105,12 @@
       "name": "Shower/Tub",
       "type": "Bathroom",
       "time": 7,
+      "prefix": "Clean",
       "icon": "tub.png"
     },
     {
       "id": "towels",
+      "prefix": "Do",
       "name": "Change Towels",
       "type": "Bathroom",
       "time": 1,
@@ -108,6 +122,7 @@
       "id": "floors",
       "name": "Floors (Vacuum/ mop)",
       "type": "Misc",
+      "prefix": "Clean",
       "time": 30,
       "icon": "vacuum.png"
     },
@@ -115,11 +130,13 @@
       "id": "dust",
       "name": "Dust furniture",
       "type": "Misc",
+      "prefix": "Clean",
       "time": 10,
       "icon": "dusting.png"
     },
     {
       "id": "windows",
+      "prefix": "Clean",
       "name": "Windows/ Mirrors",
       "type": "Misc",
       "time": 15,
@@ -127,6 +144,7 @@
     },
     {
       "id": "tidyup",
+      "prefix": "Do",
       "name": "Tidy up things",
       "type": "Misc",
       "time": 5,
@@ -134,6 +152,7 @@
     },
     {
       "id": "plants",
+      "prefix": "Do",
       "name": "Water plants",
       "type": "Misc",
       "time": 2,
@@ -141,6 +160,7 @@
     },
     {
       "id": "mowlawn",
+      "prefix": "Do",
       "name": "Mow lawn",
       "type": "Misc",
       "time": 25,

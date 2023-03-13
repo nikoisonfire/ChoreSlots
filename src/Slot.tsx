@@ -2,7 +2,7 @@ import { Chore } from "./Chore";
 
 import seven from "./assets/seven.png";
 import { useEffect, useState } from "react";
-import { replaceImgSrc } from "./util";
+import { replaceImgSrc } from "./util/util";
 import { shuffle } from "lodash";
 import React from "react";
 

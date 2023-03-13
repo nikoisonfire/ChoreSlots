@@ -1,5 +1,5 @@
 import { shuffle } from "lodash";
-import { Chore } from "./Chore";
+import { Chore } from "../Chore";
 import chores from "./chores.json";
 
 export const getAllChores = (): Array<Chore> => {
@@ -41,3 +41,13 @@ export const pickRandomSelectedChore = (store: unknown): Array<Chore> => {
 export const calcTotalTime = (choices: Array<Chore>): number => {
   return choices.reduce((acc, cur) => acc + cur.time, 0);
 };
+
+export const daysOfTheWeek = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday",
+];
