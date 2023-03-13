@@ -26,15 +26,15 @@ jobs:
       run: |
         npm install
         npm run build
-    
-    - name: Push generated webpage to GH pages
-      uses: nkoppel/push-files-to-another-repository@v1.1.1
+        
+    - name: Pushes build folder
+      uses: dmnemec/copy_file_to_another_repo_action@main
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
-        source-files: 'dist/'
-        destination-username: 'nikoisonfire'
-        destination-repository: 'nikoisonfire.github.io'
-        destination-directory: 'choreslots/'
-        destination-branch: 'main'
-        commit-email: 'nikokre@gmail.com'
+        source_file: '${{ GITHUB_WORKSPACE }}/dist/'
+        destination_repo: 'nikoisonfire/nikoisonfire.github.io'
+        destination_folder: 'choreslots'
+        user_email: 'nikokre@gmail.com'
+        user_name: 'nikoisonfire'
+        commit_message: 'Committing build code'
