@@ -36,4 +36,5 @@ jobs:
         destination-username: 'nikoisonfire'
         destination-repository: 'nikoisonfire.github.io'
         destination-directory: 'choreslots/'
+        destination-branch: 'main'
         commit-email: 'nikokre@gmail.com'
