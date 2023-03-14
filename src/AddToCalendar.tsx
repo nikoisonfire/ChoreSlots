@@ -1,5 +1,4 @@
 import { Chore } from "./Chore.js";
-//@ts-ignore
 import { ics } from "./util/ics.js";
 import { daysOfTheWeek } from "./util/util.js";
 
@@ -24,7 +23,6 @@ const AddToCalendar = (props: { chores: Array<Chore> }) => {
   const generateCalendarEvents = () => {
     const cal = ics();
     const upcoming = getUpcomingWeekdays();
-    console.log(upcoming);
     if (chores.length > 0) {
       chores.forEach((value, index) => {
         cal.addEvent(
@@ -39,6 +37,7 @@ const AddToCalendar = (props: { chores: Array<Chore> }) => {
         );
       });
     }
+    cal.download("chores");
   };
 
   return (
