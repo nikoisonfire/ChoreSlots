@@ -26,14 +26,14 @@ export type GlobalState = {
       shower: boolean;
       towels: boolean;
     };
-    lastRoll?: Chore[];
+    lastRoll: Chore[];
   };
   toggleChecked: (item: string) => void;
   reset: () => void;
   setLast: (choices: Chore[]) => void;
 };
 
-const defaultState: Partial<GlobalState> = {
+export const defaultState: Partial<GlobalState> = {
   data: {
     checked: {
       floors: true,
@@ -57,7 +57,64 @@ const defaultState: Partial<GlobalState> = {
       shower: true,
       towels: false,
     },
-    lastRoll: [],
+    lastRoll: [
+      {
+        id: "floors",
+        name: "Floors (Vacuum/ mop)",
+        type: "Misc",
+        prefix: "Clean",
+        time: 30,
+        icon: "vacuum.png",
+      },
+      {
+        id: "laundry",
+        name: "Laundry",
+        type: "Laundry",
+        time: 10,
+        icon: "laundry.png",
+        prefix: "Do",
+      },
+      {
+        id: "toilet",
+        name: "Toilet",
+        type: "Bathroom",
+        prefix: "Clean",
+        time: 7,
+        icon: "toilet.png",
+      },
+      {
+        id: "shower",
+        name: "Shower/Tub",
+        type: "Bathroom",
+        time: 7,
+        prefix: "Clean",
+        icon: "tub.png",
+      },
+      {
+        id: "kitchensink",
+        name: "Kitchen sink",
+        prefix: "Clean",
+        type: "Kitchen",
+        time: 10,
+        icon: "kitchen-sink.png",
+      },
+      {
+        id: "sink",
+        name: "Sink/Faucet",
+        type: "Bathroom",
+        prefix: "Clean",
+        time: 5,
+        icon: "sink.png",
+      },
+      {
+        id: "dust",
+        name: "Dust furniture",
+        type: "Misc",
+        prefix: "Clean",
+        time: 10,
+        icon: "dusting.png",
+      },
+    ],
   },
 };
 

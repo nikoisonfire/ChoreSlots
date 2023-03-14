@@ -3,7 +3,7 @@ import chores from "./util/chores.json";
 
 import bedding from "./assets/chores/bedding.png";
 import Slot from "./Slot";
-import { useGlobal } from "./util/state";
+import { defaultState, useGlobal } from "./util/state";
 import { isEqual, set, shuffle } from "lodash";
 import { useEffect, useState } from "react";
 import { Chore } from "./Chore";
@@ -19,15 +19,25 @@ const Slots = () => {
   const store = useGlobal((state) => state.data);
   const setLast = useGlobal((state) => state.setLast);
 
-  const defaultChoice =
-    store?.lastRoll && store?.lastRoll.length > 0
-      ? store?.lastRoll
-      : pickRandomSelectedChore(store);
+  const defaultChoices = store?.lastRoll!;
 
-  const [choices, setChoices] = useState(defaultChoice);
+  const [choices, setChoices] = useState(defaultChoices);
   const [spinning, setSpinning] = useState(false);
-  const [deff, setDeff] = useState(!isEqual(defaultChoice, store?.lastRoll));
-  const [total, setTotal] = useState(0);
+  const [deff, setDeff] = useState(
+    isEqual(defaultChoices, defaultState.data!.lastRoll)
+  );
+  const [total, setTotal] = useState(calcTotalTime(defaultChoices));
+
+  useEffect(() => {
+    const sub = useGlobal.subscribe((state) => {
+      setChoices(state.data?.lastRoll!);
+    });
+
+    return () => {
+      //Unsub
+      sub();
+    };
+  });
 
   const handleSpinClick = (e: React.FormEvent) => {
     setDeff(true);
@@ -35,9 +45,7 @@ const Slots = () => {
     setTimeout(() => {
       const ch = pickRandomSelectedChore(store);
       if (ch) {
-        setChoices(ch);
-        //@ts-ignore
-        setLast(ch);
+        setLast!(ch);
         setDeff(false);
         setTotal(calcTotalTime(ch));
       }
@@ -70,6 +78,7 @@ const Slots = () => {
         <button type="button" className="spinner" onClick={handleSpinClick}>
           spin
         </button>
+
         <Options />
       </div>
     </div>
