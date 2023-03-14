@@ -51,7 +51,7 @@ const AddToCalendar = (props: { chores: Array<Chore> }) => {
         <img src={gcal} />
         <img src={outlook} />
         <img src={ical} />
-        Download Calendar (Google, Outlook, iCal)
+        Download Calendar <span className="hide">(Google, Outlook, iCal)</span>
       </button>
     </div>
   );
