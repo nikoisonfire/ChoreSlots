@@ -1,4 +1,5 @@
 import { Chore } from "./Chore.js";
+//@ts-ignore
 import { ics } from "./util/ics.js";
 import { daysOfTheWeek } from "./util/util.js";
 
