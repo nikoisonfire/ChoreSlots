@@ -27,7 +27,10 @@ function App() {
       <section className="slots">
         <Slots />
       </section>
-      <footer>&copy; {date} - powered by ❤️ using react, vite, AWS</footer>
+      <footer>
+        &copy; {date} - powered by ❤️ using react, vite, Github. Icons by{" "}
+        <a href="https://www.flaticon.com/">Flaticon.com</a>
+      </footer>
     </div>
   );
 }
